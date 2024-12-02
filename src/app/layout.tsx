@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { getServerSession } from './api/auth/[...nextauth]/route'  // 수정
+import { auth } from "@/app/auth"
 import SessionProvider from '@/components/SessionProvider'
 
 const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
+  src: "./fonts/GeistSans-Regular.woff2",
   variable: "--font-geist-sans",
-  weight: "100 900",
+  weight: "400",
 });
+
 const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
+  src: "./fonts/GeistMono-SemiBold.woff2",
   variable: "--font-geist-mono",
-  weight: "100 900",
+  weight: "600",
 });
 
 export const metadata: Metadata = {
@@ -25,7 +26,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const session = await getServerSession(auth)  // auth를 인자로 전달
+  const session = await auth()
 
   return (
     <html lang="en">
