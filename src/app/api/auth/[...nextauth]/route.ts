@@ -1,3 +1,3 @@
-import auth from "@/app/auth"
+import { GET, POST } from "@/app/auth"
 
-export const { GET, POST } = auth
+export { GET, POST }
