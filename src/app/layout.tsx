@@ -5,7 +5,7 @@ import { auth } from "@/app/auth"
 import SessionProvider from '@/components/SessionProvider'
 
 const geistSans = localFont({
-  src: "./fonts/GeistSans-Regular.woff2",
+  src: "./fonts/Geist-Regular.woff2",
   variable: "--font-geist-sans",
   weight: "400",
 });
