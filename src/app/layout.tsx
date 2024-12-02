@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { getServerSession } from 'next-auth/next'
+import { auth } from "./api/auth/[...nextauth]/route"  // 수정
 import SessionProvider from '@/components/SessionProvider'
 
 const geistSans = localFont({
