@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { getServerSession } from 'next-auth/next'
-import { auth } from "./api/auth/[...nextauth]/route"  // 수정
+import { getServerSession } from './api/auth/[...nextauth]/route'  // 수정
 import SessionProvider from '@/components/SessionProvider'
 
 const geistSans = localFont({
@@ -26,7 +25,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const session = await getServerSession()
+  const session = await getServerSession(auth)  // auth를 인자로 전달
 
   return (
     <html lang="en">
