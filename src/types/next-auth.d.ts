@@ -1,4 +1,9 @@
 import NextAuth from "next-auth"
+import type { Metadata } from "next";
+import localFont from "next/font/local";
+import "./globals.css";
+import { getServerSession } from 'next-auth/next'
+import SessionProvider from '@/components/SessionProvider'
 
 declare module "next-auth" {
   interface Session {
