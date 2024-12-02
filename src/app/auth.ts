@@ -1,4 +1,16 @@
-import { auth } from "@/app/auth"
+import NextAuth from "next-auth"
+import GoogleProvider from "next-auth/providers/google"
 
-export const GET = auth
-export const POST = auth 
+const authOptions = {
+  providers: [
+    GoogleProvider({
+      clientId: process.env.GOOGLE_ID!,
+      clientSecret: process.env.GOOGLE_SECRET!,
+    })
+  ],
+  pages: {
+    signIn: '/auth/signin'
+  }
+}
+
+export default NextAuth(authOptions) 
